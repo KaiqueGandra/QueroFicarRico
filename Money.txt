@@ -1,0 +1,191 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <conio.h>
+
+struct Usuario {
+ 
+    char nome[50];
+ 
+    
+    
+};
+
+char letra;
+char questoes[50];
+int opcao, total, certo, errado;
+double conversao, investir, poupanca, selic;
+
+
+
+
+
+
+ Moeda(){
+ 	printf("\nVai viajar? Confira quanto vale seu precioso Real nas pricnipais moedas do mundo:\n\n");
+ 	printf("\nDigite o valor que possui em real: \n\n");
+        scanf("%lf", &conversao);
+        conversao = conversao / 4.47;
+        printf("\nVoce tera R$%.2lf Euros!", conversao);
+        conversao = conversao / 3.94;
+        printf("\nVoce tera R$%.2lf Dolares!", conversao);
+        conversao = conversao / 5.05;
+        printf("\nVoce tera R$%.2lf Libras!", conversao);
+        conversao = conversao / 0.10;
+        printf("\nVoce tera R$%.2lf Pesos!\n", conversao);
+        printf("\nPressione qualquer tecla para continuar...\n");
+        getche();
+        
+ }
+ Perfil_invest(){
+ 	
+ 	printf("\n\nNesta opcao voce sabera o seu perfil de investidor para dar o primeiro passo rumo a multiplicacao do seu dinheiro!\n\n");
+				printf("\n\n1-Como voce avalia seu conhecimento sobre investimentos?\na)Razoavel\nb)Bom\nc)Excelente\n\n");
+				scanf("%s",&questoes[0]);
+				printf("\n\n2-Qual e o seu objetivo ao investir?\na)Preservar capital: corrigir os investimentos pela variacao da inflacao\nb)Acumular recursos: obter rentabilidade acima da inflacao\nc)Especular: ter alta valorizacao, correndo riscos maiores, se necessario\n\n");
+				scanf("%s",&questoes[1]);
+				printf("\n\n3-O que voce faria se suas acoes caissem 20 por cento?\na)Venderia todas as minhas acoes\nb)Permaneceria com a mesma quantidade de acoes\nc)Compraria mais acoes\n\n");
+				scanf("%s",&questoes[2]);
+					if((questoes[0] == 'a') && (questoes[1] == 'a')){
+						printf("Voce eh um investidor Conservador (Nutella!!)");
+						printf("\nPressione qualquer tecla para continuar...\n");
+				        getche();				
+					}if((questoes[0] == 'a'||'b') && (questoes[1] == 'a'||'b')){
+						printf("Voce eh um investidor Moderado (Mormasso!!)");
+						printf("\nPressione qualquer tecla para continuar...\n");
+          				getche();
+					}else{
+						
+						printf("Voce eh um investidor Agressivo (Fodao!!)");
+						printf("\nPressione qualquer tecla para continuar...\n");
+          				getche();
+          				
+						}
+						
+ }	
+ Taxas(){
+ 	printf("\nQuanto deseja investir ?\n");
+				scanf("%lf", &investir);
+				poupanca = (investir *4.55/100) + investir;
+				printf("\nVoce tera aproxidamente R$%.2lf em 12 meses com a poupanca!\n\n", poupanca);
+				selic =  (investir *6.5/100) + investir;
+				printf("\nVoce tera aproxidamente R$%.2lf em 12 meses com a selic!\n\n", selic);
+				printf("\nPressione qualquer tecla para continuar...\n");
+        		getche();
+				
+				} 
+				
+ Quiz(){
+ 	printf("\n================ QUIZ =================\n");
+ 	  struct Usuario user;
+	     printf ("\nDigite seu nome: ");  
+	     scanf("%s", &user);
+	     printf ("\n%s Seja bem - vindo ao Quiz!\n\n", user);
+ 	
+ 		printf("\n\n1 - Atualmente, qual das opcoes abaixo tem maior rentabilidade?\na)Poupanca\nb)Selic\n\n");//resposta correta:b
+        scanf("%s",&letra);
+        if (letra=='b'){
+        printf("resposta correta\n");
+        certo++;
+        }else{
+        printf("resposta incorreta\n");
+        printf("resposta correta B\n");
+        total = total+0;
+        errado++;
+        }
+        
+        printf("\n\n2 - Atualmente, qual das moedas abaixo vale mais?\na)Libras\nb)Euro\nc)Dolar\nd)Peso\n\n");//resposta correta:a
+        scanf("%s",&letra);
+        if (letra=='a'){
+        printf("resposta correta\n");
+        certo++;
+        }else{
+        printf("resposta incorreta\n");
+        printf("resposta correta A\n");
+        total = total+0;
+        errado++;
+        }
+        
+        printf("\n\n3 - Jair Bolsonaro esta liderando as pesquisas eleitorais\nConsiderando que voce tem um perfil de investidor agressivo, em qual das acoes voce apostaria tudo?\na)Taurus(Armas)\nb)Arcor(Bala fini do trem)\nc)Cafe (Agropecuaria)\n");//resposta correta:a
+        scanf("%s",&letra);
+        if (letra=='a'){
+        printf("resposta correta\n");
+        certo++;
+        }else{
+        printf("resposta incorreta\n");
+        printf("resposta correta A\n");
+        total = total+0;
+        errado++;
+        }
+        
+
+	     
+        printf ("\n================ RESULTADOS DO QUIZ =================\n");
+ 
+        printf ("Ususario: %s\n", user);
+        printf ("Total de acertos.....: %d\n", certo);
+        printf ("Total de erros.......: %d\n", errado);
+        printf ("Pontuacao total......: %d\n\n",(certo-errado));
+        printf("\nPressione qualquer tecla para continuar...\n");
+        getche();
+       
+        }
+ 
+ 
+  
+  
+  
+  
+  		
+		
+        
+
+
+int main(void) {
+
+		
+	     
+		
+		printf("\n\nEsta plataforma te ajudara no tao sonhado controle financeiro! \n");
+		while(opcao!=4){
+    	printf("\n\nEscolha uma opcao abaixo:\n\n");
+		printf("\n1 - Conversao p/ outras moedas");
+		printf("\n2 - Perfil de investidor");
+		printf("\n3 - Taxa Selic ou poupanca?");
+    	printf("\n4 - Quiz");
+		printf("\n5 - Sair\n\n");
+		scanf("\n%d", &opcao);
+
+		switch(opcao){
+			
+        
+			case 1:
+        		Moeda();        
+		    	break;
+            
+			case 2:
+				Perfil_invest();
+				break;
+
+			case 3:
+				Taxas();
+				break;
+      		case 4:
+          		Quiz();
+        		break;
+        		
+        	case 5:
+				return(0);
+				break;
+					
+        	default:
+        		printf("\nOpcao invalida!!\n");	
+			}	
+				
+				system ("cls");
+							
+					
+						
+		}
+		
+}	
